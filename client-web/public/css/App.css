@@ -1,0 +1,102 @@
+@import url('./Carousel.css');
+
+a {
+    text-decoration: none;
+    color: #595959;
+}
+
+section {
+    position: relative;
+}
+
+.container {
+    max-width: 70rem;
+    padding: 0 2rem;
+    margin: 0 auto;
+}
+
+.horizontal {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.vertical-devider {
+    width: 1px;
+    height: 0.7rem;
+    background-color: #595959;
+    margin: 0 0.4rem;
+}
+
+.header.container {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding: 1rem 1rem 0.3rem 1rem;
+}
+
+.logo {
+    margin: 0 3rem;
+    width: 13rem;
+}
+
+.header-inner {
+    margin: 0 3rem 0.5rem 0;
+}
+
+.link {
+    font-size: 0.4rem;
+}
+
+#search-top-container {
+    margin: 0 1rem;
+    width: 18rem;
+    height: 1.6rem;
+    border: 1px solid #595959;
+    border-radius: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#search-top-textfield {
+    width: 14rem;
+    height: auto;
+    outline-style: none;
+    border: none;
+    display: flex;
+    align-self: center;
+}
+
+.submit-button {
+    width: 1rem;
+    height: 1rem;
+    cursor: pointer;
+    outline-style: none;
+    border: none;
+    background-color: rgba(0,0,0,0);
+}
+
+.search-icon {
+    width: 1rem;
+    height: 1rem;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 2.5rem;
+    background-color: #6c24ff;
+    border-radius: 0.5rem;
+}
+
+.navbar a{
+    color: #ffffff;
+    font-size: 0.75rem;
+}
+
+.navbar .vertical-devider {
+    background-color: #ffffff;
+}
