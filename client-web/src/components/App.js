@@ -18,7 +18,7 @@ const App = () => {
                 <Switch>
                     <section>
                         <Route path="/" exact component={Main} />
-                        <Route path="/login" exact component={Login} />
+                        <Route path="/login" component={Login} />
                         <Route path="/join" exact component={Join} />
                     </section>
                 </Switch>
