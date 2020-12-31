@@ -47,6 +47,8 @@ section {
 
 .link {
     font-size: 0.4rem;
+    color: #595959;
+    cursor: pointer;
 }
 
 #search-top-container {

@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import SearchButton from './SearchButton';
+import LoginButton from './assets/LoginButton';
 
 const Header = () => {
     return (
@@ -17,7 +18,7 @@ const Header = () => {
                         </form>
                     </div>
                     <div className="horizontal">
-                        <Link to="/login" className="link" >로그인</Link>
+                        <LoginButton />
                         <div className="vertical-devider" />
                         <Link to="/join" className="link" >마이페이지</Link>
                     </div>
