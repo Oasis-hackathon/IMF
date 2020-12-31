@@ -1,0 +1,4 @@
+module.exports = {
+    DB_SELECT_ERROR : "DB_SELECT_ERROR",
+    DB_INSERT_ERROR : "DB_INSERT_ERROR"
+}
