@@ -10,7 +10,7 @@ section {
 }
 
 .container {
-    max-width: 70rem;
+    max-width: 100rem;
     padding: 0 2rem;
     margin: 0 auto;
 }

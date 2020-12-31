@@ -10,7 +10,7 @@ const Navbar = () => {
                 <Link to="/">문의사항</Link>
             </div>
             <div className="horizontal">
-                <Link to="/">나도 팔래 ></Link>
+                <Link to="/">나도 팔래</Link>
             </div>
         </div>
     )

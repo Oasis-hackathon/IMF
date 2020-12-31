@@ -8,6 +8,7 @@ import Main from './pages/Main';
 import Login from './pages/Login';
 import Join from './pages/Join';
 import Footer from './Footer';
+import Slider from './slider/Slider'
 
 const App = () => {
     return (
