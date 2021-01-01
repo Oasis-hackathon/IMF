@@ -1,11 +1,11 @@
 import React from 'react';
 
-const Join = () => {
+const Mypage = () => {
     return (
         <div>
-            로그인
+            마이페이지
         </div>
     )
 }
 
-export default Join;
+export default Mypage;

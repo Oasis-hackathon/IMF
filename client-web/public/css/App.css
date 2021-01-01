@@ -36,6 +36,10 @@ section {
     padding: 1rem 1rem 0.3rem 1rem;
 }
 
+.vertical-padding {
+    padding: 15px 0;
+}
+
 .logo {
     margin: 0 3rem;
     width: 13rem;
@@ -101,4 +105,39 @@ section {
 
 .navbar .vertical-devider {
     background-color: #ffffff;
+}
+
+.detail-container {
+    max-width: 70rem;
+    padding: 4rem 8rem;
+    margin: 0 auto;
+    font-size: 0.9rem;
+    color: #595959;
+}
+
+.detail-product-info {
+}
+
+.title {
+    font-size: 1.5rem;
+    padding: 5px 0;
+}
+
+.price {
+    font-size: 1.3rem;
+    padding: 5px 0;
+}
+
+.short-description {
+    line-height: 180%;
+}
+
+.simple-slider-image {
+    width: 300px;
+    height: 300px;
+    border-radius: 0.5rem;
+}
+
+.long-description {
+    line-height: 150%;
 }
