@@ -1,30 +1,44 @@
 import React, { useState, useEffect, useRef } from "react";
-import Slide from "./Slide";
 import styled from "styled-components";
 
+// TOTAL_SLIDE는 전체 사진파일 개수 - 1
+const TOTAL_SLIDES = 2;
+const IMG_SIZE = 200;
+const MARGIN_SIZE = 20;
+
 const Container = styled.div`
-   width: 200px;
+   width: 100%;
+   display: flex;
    overflow: hidden;
 `;
 
-const Button = button`
-   all: unset;
-   border: 1px solid coral;
-   padding: 0.5em 2em;
-   color: coral;
-   border-radius: 0px;
-   &:hover {
-      transition: all 0.3s ease-in-out;
-      background-color: coral;
-      color: #fff;
-   }
+const SlidesContainer = styled.div`
+   width: 100%;
+   display: flex;
+   overflow: hidden;
 `;
-const SliderContainer = styled.div`
-   width: 200px;
+
+const Slides = styled.div`
+   width: 100%;
    display: flex;
 `;
-const TOTAL_SLIDES = 2;
-// TOTAL_SLIDE는 전체 사진파일 개수 - 1
+
+
+const IMG = styled.img`
+   width: 200px;
+   height: 200px;
+   margin: 0 20px;
+   border-radius: 3rem;
+   z-index: 1;
+`;
+
+const Slide = ({imgurl}) => {
+   return (
+      <IMG src={imgurl} />
+   )
+}
+
+
 export default function Slider() {
 
    const [currentSlide, setCurrentSlide] = useState(0);
@@ -37,25 +51,27 @@ export default function Slider() {
    };
 
    const prevSlide = () => {
-      if (currentSlide !== 0) {
+      if (currentSlide > 0) {
          setCurrentSlide(currentSlide - 1);
       }
    };
 
    useEffect(() => {
-      slideRef.current.style.transition = "all 0.5s ease-in-out";
-      slideRef.current.style.transform = `translateX(-${currentSlide}00%)`;
+      slideRef.current.style.transition = "all 0.2s ease-in-out";
+      slideRef.current.style.transform = `translateX(-${currentSlide*(IMG_SIZE + MARGIN_SIZE*2)}px)`;
    }, [currentSlide]);
 
    return (
       <Container>
-      <Button><img src="/images/buttons/left.png"onClick={prevSlide}/></Button>
-         <SliderContainer ref={slideRef}>
-            <Slide img={window.location.origin + "/images/img1.png"} />
-            <Slide img={window.location.origin + "/images/img2.png"} />
-            <Slide img={window.location.origin + "/images/img3.png"} />
-         </SliderContainer>
-         <Button><img src="/images/buttons/right.png" onClick={nextSlide}/></Button>
+         <img className="slider-button" src="/images/buttons/left.png" alt="leftButton" onClick={prevSlide}/>
+         <SlidesContainer>
+            <Slides ref={slideRef}>
+               <Slide imgurl={window.location.origin + "/images/img1.png"} />
+               <Slide imgurl={window.location.origin + "/images/img2.png"} />
+               <Slide imgurl={window.location.origin + "/images/img3.png"} />
+            </Slides>
+         </SlidesContainer>
+         <img className="slider-button" src="/images/buttons/right.png" alt="rightButton" onClick={nextSlide}/>
       </Container>
    );
 }

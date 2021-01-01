@@ -8,7 +8,6 @@ import Main from './pages/Main';
 import Login from './pages/Login';
 import Join from './pages/Join';
 import Footer from './Footer';
-import Slider from './slider/Slider'
 
 const App = () => {
     return (
@@ -18,7 +17,7 @@ const App = () => {
                 <Navbar />
                 <Switch>
                     <section>
-                        <Route path="/" exact component={Main} />
+                        <Route path="" exact component={Main} />
                         <Route path="/login" exact component={Login} />
                         <Route path="/join" exact component={Join} />
                     </section>
