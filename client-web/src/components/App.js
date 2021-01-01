@@ -5,7 +5,8 @@ import history from "../history";
 import Header from "./Header";
 import Navbar from "./Navbar";
 import Main from "./pages/Main";
-import Join from "./pages/Join";
+import Mypage from "./pages/Mypage";
+import ProductDetail from './pages/ProductDetail';
 import Footer from "./Footer";
 
 const App = () => {
@@ -15,10 +16,11 @@ const App = () => {
         <Header />
         <Navbar />
         <Switch>
-          <section>
+          <div>
             <Route path="/" exact component={Main} />
-            <Route path="/join" exact component={Join} />
-          </section>
+            <Route path="/mypage" exact component={Mypage} />
+            <Route path="/product_detail" component={ProductDetail} />
+          </div>
         </Switch>
         <Footer />
       </Router>

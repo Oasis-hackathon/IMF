@@ -5,7 +5,7 @@ const Navbar = () => {
     return (
         <div className="navbar container">
             <div className="horizontal">
-                <Link to="/">구경할래</Link>
+                <Link to="/product_detail">구경할래</Link>
                 <div className="vertical-devider" />
                 <Link to="/">문의사항</Link>
             </div>

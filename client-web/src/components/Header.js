@@ -20,7 +20,7 @@ const Header = () => {
                     <div className="horizontal">
                         <LoginButton />
                         <div className="vertical-devider" />
-                        <Link to="/join" className="link" >마이페이지</Link>
+                        <Link to="/mypage" className="link" >마이페이지</Link>
                     </div>
                 </div>
             </div>
