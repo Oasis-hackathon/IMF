@@ -1,8 +1,17 @@
-@import url('./Carousel.css');
+@import url('./SimpleSlider.css');
+
+@font-face {
+    src: url("../IBMPlexSansKR-Light.ttf");
+    font-family: "IbmPlex";
+}
+
+body {
+    font-family: "IbmPlex", sans-serif;
+}
 
 a {
     text-decoration: none;
-    color: #595959;
+    color: #414141;
 }
 
 section {
@@ -10,7 +19,7 @@ section {
 }
 
 .container {
-    max-width: 70rem;
+    max-width: 60rem;
     padding: 0 2rem;
     margin: 0 auto;
 }
@@ -21,11 +30,33 @@ section {
     align-items: center;
 }
 
+.horizontal-space-between {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
 .vertical-devider {
     width: 1px;
     height: 0.7rem;
     background-color: #595959;
     margin: 0 0.4rem;
+}
+
+.vertical-padding {
+    padding: 15px 0;
+}
+
+.vertical-center {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+.vertical-center span {
+    font-size: 0.7rem;
+    color: #414141;
 }
 
 .header.container {
@@ -36,22 +67,34 @@ section {
     padding: 1rem 1rem 0.3rem 1rem;
 }
 
-.vertical-padding {
-    padding: 15px 0;
-}
-
 .logo {
-    margin: 0 3rem;
+    margin: 0 1rem;
     width: 13rem;
 }
 
 .header-inner {
-    margin: 0 3rem 0.5rem 0;
+    margin: 0 1rem 0.5rem 0;
 }
 
 .link {
     font-size: 0.4rem;
-    color: #595959;
+    color: #414141;
+    cursor: pointer;
+}
+
+.purple-button {
+    background-color: #7635ff;
+    border-radius: 0.5rem;
+    color: #ffffff;
+    padding: 15px 20px;
+    font-weight: lighter;
+    margin: 10px;
+    cursor: pointer;
+}
+
+.small-button {
+    width: 30px;
+    padding: 0 10px;
     cursor: pointer;
 }
 
@@ -59,7 +102,7 @@ section {
     margin: 0 1rem;
     width: 18rem;
     height: 1.6rem;
-    border: 1px solid #595959;
+    border: 1px solid #414141;
     border-radius: 1rem;
     display: flex;
     justify-content: center;
@@ -94,48 +137,56 @@ section {
     justify-content: space-between;
     align-items: center;
     height: 2.5rem;
-    background-color: #6c24ff;
+    background-color: #7635ff;
     border-radius: 0.5rem;
 }
 
 .navbar a{
     color: #ffffff;
     font-size: 0.75rem;
+    font-weight: lighter;
 }
 
 .navbar .vertical-devider {
     background-color: #ffffff;
 }
 
+/* ProductDeate page */
+
 .detail-container {
     max-width: 70rem;
-    padding: 4rem 8rem;
+    padding: 4rem 4rem;
     margin: 0 auto;
     font-size: 0.9rem;
-    color: #595959;
+    color: #414141;
 }
 
-.detail-product-info {
+.categorize span {
+    color: #7635ff;
+}
+
+.product-category {
+    font-size: 1.1rem;
 }
 
 .title {
-    font-size: 1.5rem;
+    font-size: 2rem;
     padding: 5px 0;
 }
 
 .price {
-    font-size: 1.3rem;
+    font-size: 1.6rem;
     padding: 5px 0;
+    text-align: end;
 }
 
 .short-description {
     line-height: 180%;
 }
 
-.simple-slider-image {
-    width: 300px;
-    height: 300px;
-    border-radius: 0.5rem;
+.product-button-container {
+    margin: 15px 0;
+    
 }
 
 .long-description {
