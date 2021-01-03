@@ -1,22 +1,21 @@
 import React from 'react';
 
-const ProductCost = 30000;
-
-const ProductCategory = "제작판매";
-const ProductTitle = "수제 카드지갑";
-const Product = "수제 카드지갑";
-
-const LinkToProductPage = "";
+const category = "제작판매";
+const title = "제목제목제목제목제목제목제목제목제목";
+const cost = 30000;
 
 const ProductContainer = ({src}) => {
    return (
        <div className="product-container">
          <div className="product-img-container">
-            <div className="product-img-text no-drag">{ProductCost.toLocaleString()} 원</div>
+            <div className="product-img-text no-drag">자세히</div>
             <img className="product-img" src={src} alt="product img"/>
          </div>
-         <p>{ProductCategory}</p>
-         <p>{ProductTitle}</p>
+         <div className="product-description">
+            <div className="product-title">{title}</div>
+            <div className="product-cost">{cost.toLocaleString()} 원</div>
+            <div className="product-category">{category} <img src=""/></div> 
+         </div>
       </div>
    )
 }

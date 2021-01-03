@@ -1,11 +1,11 @@
 import React from 'react';
-import Slider from '../assets/Slider'
-import ProductContainer from '../assets/ProductContainer'
+import ProductSlider from '../assets/ProductSlider'
+
 const Main = () => {
     return (
-        <div>
+        <div className="main-container">
             <h1>우리 <strong>대학교</strong> 인기 매물</h1>
-            <Slider/>
+            <ProductSlider />
         </div>
     )
 }

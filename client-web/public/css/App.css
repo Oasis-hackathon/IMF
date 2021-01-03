@@ -10,10 +10,22 @@ section {
 }
 
 .container {
-    max-width: 70rem;
+    display: flex;
+}
+
+.container-app {
+    width: 70%;
     padding: 0 2rem;
     margin: 0 auto;
 }
+.container-side-left {
+    width: 15%;
+}
+
+.container-side-right {
+    width: 15%;
+}
+
 
 .horizontal {
     display: flex;
@@ -22,6 +34,12 @@ section {
 }
 
 .vertical-devider {
+    width: 1px;
+    height: 0.7rem;
+    background-color: #595959;
+    margin: 0 0.4rem;
+}
+.horizontal-devider {
     width: 1px;
     height: 0.7rem;
     background-color: #595959;
@@ -107,6 +125,15 @@ section {
     background-color: #ffffff;
 }
 
+.navbar ul {
+    list-style: none;
+    margin: 0;
+}
+
+.navbar li {
+    margin: 0 10px;
+}
+
 .detail-container {
     max-width: 70rem;
     padding: 4rem 8rem;
@@ -147,10 +174,11 @@ section {
 
 .slider-button {
     border: none;
-    width:20px;
-    height:30px;
+    width:15px;
+    height:25px;
     border-radius: 0.5rem;
-    padding: 85px 30px;
+    padding: 20px 20px;
+    margin: 90px 5px;
     z-index:1;
 }
 
@@ -162,8 +190,9 @@ section {
 
 .product-container {
     position: relative;
-    width: 200px;
-    height: 400px;
+    width: 180px;
+    margin: 20px 20px;
+    height: 260px;
 }
 
 .product-img-container {
@@ -180,7 +209,7 @@ section {
     width: 180px;
     height: 100px;
     padding-top: 80px;
-    border-radius: 30px;
+    border-radius: 16px;
     color: rgba(0,0,0,0);
     transition: all 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
     background-color: rgba(0,0,0,0);
@@ -195,9 +224,29 @@ section {
 .product-img {
     width: 180px;
     height: 180px;
-    border-radius: 30px;
+    border-radius: 16px;
 }
 
+.product-description {
+    font-weight: 900;
+    margin: 4px 4px;
+}
+
+.product-title {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    font-size: 16px;
+}
+.product-cost {
+    font-size: 20px;
+}
+.product-category {
+    font-size: 12px;
+    color: #7735ff;
+    margin: 5px 0;
+    font-family: "IBM Plex Sans KR";
+}
 /* drag inhibit */
 .no-drag {
     -ms-user-select: none;
@@ -210,8 +259,30 @@ section {
 /* side bar */
 .side-bar{
     position: fixed;
+    text-align: center;
+    top:25%;
+    font-size: 12px;
+    color:#414141;
+    font-weight: 400;
 }
 
-.side-buttons {
-    
+.side-bar img {
+    width: 70px;
+    height: 70px;
+}
+
+.side-bar ul {
+    list-style: none;
+}
+
+.side-bar li {
+    padding: 20px 0;
+    width: 100px;
+    border-bottom: 1px solid #efefef;
+}
+
+.side-buttons li:hover {
+    color: #000000;
+    background-color: #e4e4e4;
+    font-weight: 800;
 }
