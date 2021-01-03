@@ -1,4 +1,5 @@
 @import url('./SimpleSlider.css');
+@import url('./MyInfo.css');
 
 @font-face {
     src: url("../IBMPlexSansKR-Light.ttf");
@@ -19,7 +20,7 @@ section {
 }
 
 .container {
-    max-width: 60rem;
+    max-width: 70rem;
     padding: 0 2rem;
     margin: 0 auto;
 }
@@ -42,6 +43,10 @@ section {
     width: 15%;
 }
 
+.horizontal-center {
+    display: flex;
+    justify-content: center;
+}
 
 .horizontal {
     display: flex;
@@ -83,6 +88,13 @@ section {
     font-size: 0.7rem;
     color: #414141;
 }
+
+.page-title {
+    padding: 2rem;
+    font-size: 2rem;
+}
+
+/* general css end */
 
 .header.container {
     position: relative;

@@ -52,7 +52,7 @@ class LoginButton extends React.Component {
             return null;
         } else {
             return (
-                <span className="link" onClick={this.onSignInClick} >로그인</span>
+                <span id="login" className="link" onClick={this.onSignInClick} >로그인</span>
             )
         }
     }
@@ -64,9 +64,9 @@ class LoginButton extends React.Component {
 
 const mapStateToProps = (state) => {
     return {
-        authorization: state.auth.authorization,
-        isSignedIn: state.auth.isSignedIn,
-        userName: state.auth.userName
+        authorization: state.user.authorization,
+        isSignedIn: state.user.isSignedIn,
+        userName: state.user.userName
     };
 }
 

@@ -1,6 +1,6 @@
 .simple-slider-image {
-    width: 310px;
-    height: 310px;
+    width: 350px;
+    height: 350px;
     border-radius: 0.5rem;
 }
 
@@ -11,7 +11,7 @@
 }
 
 .simple-slider-small-image {
-    width: 320px;
+    width: 360px;
     height: 76.6px;
     display: flex;
     justify-content: start;
@@ -22,8 +22,8 @@
 }
 
 .simple-slider-small-image img {
-    width: 70px;
-    height: 70px;
+    width: 80px;
+    height: 80px;
 }
 
 .arrow {

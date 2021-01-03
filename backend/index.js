@@ -20,13 +20,13 @@ app.get('/', (req, res) => {
 
 app.post('/login/google', async (req, res) => {
     try {
-        let insertId;
+        let resultRow;
         const result = await query.isUserExist(req.body.userId);
         if (result === false) 
-            insertId = await query.insertUser(req.body);
+            resultRow = await query.insertUser(req.body);
         else
-            insertId = result;
-        res.status('200').json({id: result}).end();
+            resultRow = result;
+        res.status('200').json(resultRow).end();
     } catch (err) {
         res.status('400').json(err).end();
     }

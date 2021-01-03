@@ -8,6 +8,7 @@
     "@testing-library/user-event": "^12.1.10",
     "axios": "^0.18.0",
     "history": "^4.10.1",
+    "lodash": "^4.17.20",
     "react": "^16.14.0",
     "react-bootstrap": "^1.4.0",
     "react-dom": "^16.14.0",
