@@ -1,0 +1,39 @@
+.simple-slider-image {
+    width: 310px;
+    height: 310px;
+    border-radius: 0.5rem;
+}
+
+.imgs-preview {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.simple-slider-small-image {
+    width: 320px;
+    height: 76.6px;
+    display: flex;
+    justify-content: start;
+}
+
+.image-wrapper {
+    padding: 10px 5px;
+}
+
+.simple-slider-small-image img {
+    width: 70px;
+    height: 70px;
+}
+
+.arrow {
+    position: relative;
+    left: 0;
+    font-size: 60px;
+    font-weight: lighter;
+    margin: auto 3px;
+    color: #f0f0f0;
+    cursor: pointer;
+    z-index: 1;
+    transform: translateY(180%);
+}
