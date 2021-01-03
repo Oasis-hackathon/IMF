@@ -1,0 +1,43 @@
+.table-container {
+    display: flex;
+    justify-content: center;
+}
+
+.table {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.table-row {
+    width: 42rem;
+    display: flex;
+}
+
+.table-cell {
+    height: 2rem;
+    padding: 0.5rem 1rem;
+    text-align: center;
+    border: 0.5px solid #f4f4f4;
+    display: flex;
+    justify-content: center;
+}
+
+.table-cell > div {
+    margin: auto;
+}
+
+.field {
+    background-color: #fafafa;
+    width: 12rem;
+}
+
+.data {
+    width: 30rem;
+}
+
+.horizontal-center .edit-button {
+    margin: 20px;
+    width: 70px;
+    text-align: center;
+}

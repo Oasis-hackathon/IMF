@@ -5,7 +5,7 @@ import SimpleSlider from '../assets/SimpleSlider';
 
 const ProductDetail = () => {
     return (
-        <div className="detail-container">
+        <div className="main-container detail-container">
             <div>
                 <div className="horizontal detail-product-info" >
                     <SimpleSlider />

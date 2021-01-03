@@ -4,7 +4,8 @@ import ProductContainer from "./ProductContainer";
 
 // TOTAL_SLIDE는 전체 사진파일 개수 - 1
 const TOTAL_SLIDES = 2;
-const IMG_SIZE = 200;
+const IMG_SIZE = 190;
+const SLIDE_MARGIN = 20;
 const Slide = ProductContainer;
 
 const Container = styled.div`
@@ -43,7 +44,7 @@ export default function Slider() {
 
    useEffect(() => {
       slideRef.current.style.transition = "all 0.5s cubic-bezier(0.075, 0.82, 0.165, 1)";
-      slideRef.current.style.transform = `translateX(-${currentSlide*(IMG_SIZE)}px)`;
+      slideRef.current.style.transform = `translateX(-${currentSlide*(IMG_SIZE + SLIDE_MARGIN * 2)}px)`;
    }, [currentSlide]);
 
    return (
@@ -54,6 +55,9 @@ export default function Slider() {
                <Slide src={window.location.origin + "/images/img1.png"} />
                <Slide src={window.location.origin + "/images/img2.png"} />
                <Slide src={window.location.origin + "/images/img3.png"} />
+               <Slide src={window.location.origin + "/images/detail1.png"} />
+               <Slide src={window.location.origin + "/images/detail2.png"} />
+               <Slide src={window.location.origin + "/images/detail3.png"} />
             </Slides>
          </SlidesContainer>
          <img className="slider-button" src="/images/buttons/right.png" alt="rightButton" onClick={nextSlide}/>
