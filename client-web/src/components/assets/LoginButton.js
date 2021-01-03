@@ -42,7 +42,11 @@ class LoginButton extends React.Component {
         } else if (this.props.isSignedIn) {
             if (this.props) {
                 return (
-                    <span className="link" onClick={this.onSignOutClick} >{this.props.userName} 님</span>
+                    <React.Fragment>
+                        <span className="link cursur-none" >환영합니다! {this.props.userName}님</span>
+                        <div className="vertical-devider" />
+                        <span className="link" onClick={this.onSignOutClick} >로그아웃</span>
+                    </React.Fragment>
                 )
             }
             return null;
