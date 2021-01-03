@@ -12,7 +12,7 @@ import SideBar from "./SideBar";
 
 const App = () => {
   return (
-    <div className="container">
+    <div className="container-main">
 
       <div className="container-side-left">
       </div>

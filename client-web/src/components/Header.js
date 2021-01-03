@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import SearchButton from './SearchButton';
 import LoginButton from './assets/LoginButton';
+import DropdownLink from './DropdownLink';
 
 const Header = () => {
     return (
@@ -20,7 +21,16 @@ const Header = () => {
                     <div className="horizontal">
                         <LoginButton />
                         <div className="vertical-devider" />
-                        <Link to="/mypage" className="link" >마이페이지</Link>
+                        <div className="dropdown-container ">
+                            <div className="link dropdown-button" >마이페이지</div>
+                            <div className="dropdown-content">
+                                <DropdownLink link="/myInfo" title="내 정보"/>
+                                <DropdownLink link="/cart" title="장바구니" />
+                                <DropdownLink link="/wish" title="Wish 목록" />
+                                <DropdownLink link="/myOrder" title="주문보기" />
+                                <DropdownLink link="/myProduct" title="상품관리" />
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

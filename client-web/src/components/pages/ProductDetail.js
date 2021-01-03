@@ -1,20 +1,17 @@
 import React from 'react';
+import ProductButton from '../ProductButton';
+import ProductInfo from '../ProductInfo';
 import SimpleSlider from '../assets/SimpleSlider';
 
 const ProductDetail = () => {
     return (
         <div className="detail-container">
-            <div className="container">
+            <div>
                 <div className="horizontal detail-product-info" >
                     <SimpleSlider />
                     <div className="container">
-                        <div className="vertical-padding">
-                            <div className="title">해커톤학과 과잠 공구해요</div>
-                            <div className="price">30,000 원</div>
-                        </div>
-                        <div className="short-description">
-                            이 편지는 영국에서 최초로 시작되어 일년에 한 바퀴 돌면서 받는 사람에게 행운을 주었고 지금은 당신에게로 옮겨진 이 편지는 4일 안에 당신 곁을 떠나야 합니다.
-                        </div>
+                        <ProductInfo />
+                        <ProductButton count={23}/>
                     </div>
                 </div>
                 <div className="vertical-padding">
