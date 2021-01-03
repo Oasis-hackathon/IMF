@@ -108,7 +108,7 @@ section {
 }
 
 .cursor-none {
-    cursor: none;
+    cursor: default;
 }
 
 .purple-button {
@@ -185,7 +185,6 @@ section {
 .detail-container {
     max-width: 70rem;
     padding: 4rem 4rem;
-    margin: 0 auto;
     font-size: 0.9rem;
     color: #414141;
 }
@@ -273,15 +272,15 @@ section {
 
 .product-container {
     position: relative;
-    width: 180px;
-    margin: 20px 20px;
+    width: 190px;
+    margin: 15px 20px;
     height: 260px;
 }
 
 .product-img-container {
     position: relative;
-    width: 180px;
-    height: 180px;
+    width: 190px;
+    height: 190px;
     text-align: center;
     vertical-align: middle;
 }
@@ -289,9 +288,9 @@ section {
 .product-img-text {
     position: absolute;
     font-size: 15px;
-    width: 180px;
+    width: 190px;
     height: 100px;
-    padding-top: 80px;
+    padding-top: 90px;
     border-radius: 16px;
     color: rgba(0,0,0,0);
     transition: all 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
@@ -305,8 +304,8 @@ section {
 }
 
 .product-img {
-    width: 180px;
-    height: 180px;
+    width: 190px;
+    height: 190px;
     border-radius: 16px;
 }
 
@@ -330,6 +329,7 @@ section {
     margin: 5px 0;
     font-family: "IBM Plex Sans KR";
 }
+
 /* drag inhibit */
 .no-drag {
     -ms-user-select: none;

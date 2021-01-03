@@ -5,7 +5,7 @@ import history from "../history";
 import Header from "./Header";
 import Navbar from "./Navbar";
 import Main from "./pages/Main";
-import Mypage from "./pages/Mypage";
+import MyInfo from "./pages/MyInfo";
 import ProductDetail from './pages/ProductDetail';
 import Footer from "./Footer";
 import SideBar from "./SideBar";
@@ -24,7 +24,7 @@ const App = () => {
           <Switch>
             <div>
               <Route path="/" exact component={Main} />
-              <Route path="/mypage" exact component={Mypage} />
+              <Route path="/myInfo" exact component={MyInfo} />
               <Route path="/product_detail" component={ProductDetail} />
             </div>
           </Switch>

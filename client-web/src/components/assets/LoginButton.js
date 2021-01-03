@@ -43,7 +43,7 @@ class LoginButton extends React.Component {
             if (this.props) {
                 return (
                     <React.Fragment>
-                        <span className="link cursur-none" >환영합니다! {this.props.userName}님</span>
+                        <span className="link cursor-none" >환영합니다! {this.props.userName}님</span>
                         <div className="vertical-devider" />
                         <span className="link" onClick={this.onSignOutClick} >로그아웃</span>
                     </React.Fragment>
