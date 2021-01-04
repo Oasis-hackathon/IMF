@@ -1,17 +1,19 @@
 import React from 'react';
+import history from "../history";
+
 
 const SideBar = () => {
     return (
         <div className="side-bar no-drag">
-            <ul className="side-buttons">
-                <img src={window.location.origin + "/images/사자.png"} alt="사자아이콘" />
-                <li><a href="1">내정보</a></li>
-                <li><a href="#">장바구니</a></li>
-                <li><a href="#">찜목록</a></li>
-                <li><a href="#">주문보기</a></li>
-                <li><a href="#">상품관리</a></li>
-                <li><a href="#">고객센터</a></li>
-                <li><a href="#">↑ TOP</a></li>
+            <ul className="side-buttons link">
+                <img onClick={() => history.push('/')} src={window.location.origin + "/images/lion.png"} alt="사자아이콘" />
+                <li onClick={() => history.push('/')}>내정보 </li>
+                <li onClick={() => history.push('/')}>장바구니 </li>
+                <li onClick={() => history.push('/')}>찜목록 </li>
+                <li onClick={() => history.push('/')}>주문보기 </li>
+                <li onClick={() => history.push('/')}>상품관리 </li>
+                <li onClick={() => history.push('/')}>고객센터</li>
+                <li onClick={() => window.scrollTo({top:0, left:0, behavior:'smooth'})}>↑ TOP</li>
             </ul>
         </div>
     )

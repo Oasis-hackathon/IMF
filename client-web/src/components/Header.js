@@ -22,7 +22,7 @@ const Header = () => {
                         <LoginButton />
                         <div className="vertical-devider" />
                         <div className="dropdown-container ">
-                            <div className="link dropdown-button" >마이페이지</div>
+                            <div className="link dropdown-button">마이페이지</div>
                             <div className="dropdown-content">
                                 <DropdownLink link="/myInfo" title="내 정보"/>
                                 <DropdownLink link="/cart" title="장바구니" />

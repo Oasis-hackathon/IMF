@@ -2,12 +2,14 @@
 @import url('./MyInfo.css');
 
 @font-face {
-    src: url("../IBMPlexSansKR-Light.ttf");
+    src: url("../IBMPlexSansKR-Text.ttf");
     font-family: "IbmPlex";
 }
 
 body {
-    font-family: "IbmPlex", sans-serif;
+    font-family: "IbmPlex";
+    margin:0;
+    padding:0;
 }
 
 a {
@@ -31,29 +33,10 @@ section {
 }
 
 .container {
-    max-width: 70rem;
-    padding: 0 2rem;
+    width: 70rem;
+    padding: 5px 0;
     margin: 0 auto;
 }
-
-.container-main {
-    display: flex;
-}
-
-.container-app {
-    width: 70%;
-    padding: 0 2rem;
-    margin: 0 auto;
-}
-
-.container-side-left {
-    width: 15%;
-}
-
-.container-side-right {
-    width: 15%;
-}
-
 .horizontal-center {
     display: flex;
     justify-content: center;
@@ -101,31 +84,38 @@ section {
 }
 
 .page-title {
-    padding: 2rem;
+    padding: 3rem 0 1rem 7rem;
     font-size: 2rem;
 }
 
 /* general css end */
+
+.container-app {
+    width: 100%;
+    padding: 0 0rem;
+    margin: 0 auto;
+    background-color: white;
+}
 
 .header.container {
     position: relative;
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
-    padding: 1rem 1rem 0.3rem 1rem;
+    margin-top: 1rem;
 }
 
 .logo {
-    margin: 0 1rem;
+    margin: 20px;
+    margin-bottom: 0;
     width: 13rem;
 }
 
 .header-inner {
-    margin: 0 1rem 0.5rem 0;
+    margin: 0 1rem 6px 0;
 }
 
 .link {
-    font-size: 0.4rem;
     color: #414141;
     cursor: pointer;
 }
@@ -135,7 +125,7 @@ section {
 }
 
 .purple-button {
-    background-color: #7635ff;
+    background-color: #7735ff;
     border-radius: 0.5rem;
     color: #ffffff;
     padding: 15px 20px;
@@ -164,10 +154,14 @@ section {
 #search-top-textfield {
     width: 14rem;
     height: auto;
+    border-radius: 1rem;
     outline-style: none;
     border: none;
     display: flex;
     align-self: center;
+}
+#search-top-textfield:hover {
+    background-color: rgba(0,0,0,0.1);
 }
 
 .submit-button {
@@ -189,18 +183,35 @@ section {
     justify-content: space-between;
     align-items: center;
     height: 2.5rem;
-    background-color: #7635ff;
+    background-color: #7735ff;
     border-radius: 0.5rem;
 }
 
 .navbar a{
     color: #ffffff;
-    font-size: 0.75rem;
+    font-size: 0.8rem;
     font-weight: lighter;
 }
 
 .navbar .vertical-devider {
     background-color: #ffffff;
+}
+
+.navbar ul {
+    display: flex;
+    padding: 0;
+    margin: 0 20px;
+    list-style: none;
+}
+
+.navbar li {
+    border-radius: 8px;
+    padding: 5px 12px;
+    margin: 0 10px;
+}
+
+.navbar li:hover {
+    background-color: rgba(0, 0, 0, 0.2);
 }
 
 /* ProductDetail page */
@@ -213,10 +224,10 @@ section {
 }
 
 .categorize span {
-    color: #7635ff;
+    color: #7735ff;
 }
 
-.product-category {
+.categorize .product-category {
     font-size: 1.1rem;
 }
 
@@ -250,11 +261,10 @@ section {
     padding-top: 8px;
     display: none;
     position: absolute;
-    background-color: #f9f9f9;
     min-width: 100px;
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
     z-index: 1;
-    color: #414141
+    color: #414141;
 }
 .navbar .dropdown-content a {
     color: #414141;
@@ -270,6 +280,7 @@ section {
     cursor: pointer;
     display: flex;
     align-items: center;
+    background-color: #f9f9f9;
 }
 
 .dropdown-content div:hover {
@@ -283,7 +294,7 @@ section {
     height:25px;
     border-radius: 0.5rem;
     padding: 20px 20px;
-    margin: 90px 5px;
+    margin: auto 20px;
     z-index:1;
 }
 
@@ -366,8 +377,8 @@ section {
 .side-bar{
     position: fixed;
     text-align: center;
-    top:25%;
-    font-size: 12px;
+    top:18%;
+    right: 8rem;
     color:#414141;
     font-weight: 400;
 }
@@ -382,13 +393,45 @@ section {
 }
 
 .side-bar li {
+    font-size: 12px;
     padding: 20px 0;
     width: 100px;
     border-bottom: 1px solid #efefef;
+    transition:cubic-bezier(0.215, 0.610, 0.355, 1);
 }
 
 .side-buttons li:hover {
     color: #000000;
     background-color: #e4e4e4;
     font-weight: 800;
+}
+
+/* main-image */
+.main-img {
+    border-radius: 20px;
+    width:200%;
+}
+
+/* footer */
+
+footer {
+    position:relative;
+    padding: 0;
+    margin: 0;
+    margin-top: 150px;
+    width: 100%;
+    height: 200px;
+    background-color: #7735ff;
+    text-align: center;
+    bottom:0;
+}
+
+footer img {
+    margin-top: 70px;
+    width: 200px;
+}
+
+
+.not-footer {
+    min-height: 786px;
 }

@@ -1,12 +1,12 @@
 import React, { useState, useEffect, useRef } from "react";
 import styled from "styled-components";
-import ProductContainer from "./ProductContainer";
+import PostingSlider from "./PostingSlider";
 
 // TOTAL_SLIDE는 전체 사진파일 개수 - 1
 const TOTAL_SLIDES = 2;
 const IMG_SIZE = 190;
 const SLIDE_MARGIN = 20;
-const Slide = ProductContainer;
+const Slide = PostingSlider;
 
 const Container = styled.div`
    width: 100%;
