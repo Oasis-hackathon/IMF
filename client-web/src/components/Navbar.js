@@ -13,17 +13,18 @@ const Navbar = () => {
             </ul> */}
             <div className="horizontal">
                 <ul className="link">
-                    <Link to="/product_detail" className="dropdown-button" >
-                        <li className="dropdown-container ">
+                    <li className="dropdown-container ">
+                        <Link to="/product_detail" className="dropdown-button" >
                             나도살래
                             <div className="dropdown-content">
                                 <DropdownLink link="/my_univ" title="우리학교" />
                                 <DropdownLink link="/other_univs" title="다른학교" />
                             </div>
-                        </li>
+                        
                     </Link>
+                    </li>
 
-                    <li><Link  to="/">나도팔래</Link></li>
+                    <li><Link  to="/posting_page">나도팔래</Link></li>
                     <li><Link to="/">졸작볼래</Link></li>
                     <li><Link to="/">주문제작 사이트</Link></li>
                 </ul>

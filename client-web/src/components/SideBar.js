@@ -13,7 +13,7 @@ const SideBar = () => {
                 <li onClick={() => history.push('/')}>주문보기 </li>
                 <li onClick={() => history.push('/')}>상품관리 </li>
                 <li onClick={() => history.push('/')}>고객센터</li>
-                <li onClick={() => window.scrollTo(0, 0)}>↑ TOP</li>
+                <li onClick={() => window.scrollTo({top:0, left:0, behavior:'smooth'})}>↑ TOP</li>
             </ul>
         </div>
     )

@@ -2,7 +2,7 @@
 @import url('./MyInfo.css');
 
 @font-face {
-    src: url("../IBMPlexSansKR-Light.ttf");
+    src: url("../IBMPlexSansKR-Text.ttf");
     font-family: "IbmPlex";
 }
 
@@ -23,7 +23,7 @@ section {
 
 .container {
     width: 70rem;
-    padding: 0 2rem;
+    padding: 5px 0;
     margin: 0 auto;
 }
 .horizontal-center {
@@ -73,7 +73,7 @@ section {
 }
 
 .page-title {
-    padding: 2rem 2rem 2rem 5rem;
+    padding: 3rem 0 1rem 7rem;
     font-size: 2rem;
 }
 
@@ -83,6 +83,7 @@ section {
     width: 100%;
     padding: 0 0rem;
     margin: 0 auto;
+    background-color: white;
 }
 
 .header.container {
@@ -90,20 +91,20 @@ section {
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
-    padding: 1rem 1rem 0.3rem 1rem;
+    margin-top: 1rem;
 }
 
 .logo {
-    margin: 0;
+    margin: 20px;
+    margin-bottom: 0;
     width: 13rem;
 }
 
 .header-inner {
-    margin: 0 1rem 0.5rem 0;
+    margin: 0 1rem 6px 0;
 }
 
 .link {
-    font-size: 0.4rem;
     color: #414141;
     cursor: pointer;
 }
@@ -142,10 +143,14 @@ section {
 #search-top-textfield {
     width: 14rem;
     height: auto;
+    border-radius: 1rem;
     outline-style: none;
     border: none;
     display: flex;
     align-self: center;
+}
+#search-top-textfield:hover {
+    background-color: rgba(0,0,0,0.1);
 }
 
 .submit-button {
@@ -173,7 +178,7 @@ section {
 
 .navbar a{
     color: #ffffff;
-    font-size: 0.75rem;
+    font-size: 0.8rem;
     font-weight: lighter;
 }
 
@@ -184,14 +189,14 @@ section {
 .navbar ul {
     display: flex;
     padding: 0;
-    margin: 0;
+    margin: 0 20px;
     list-style: none;
 }
 
 .navbar li {
     border-radius: 8px;
     padding: 5px 12px;
-    margin-right: 10px;
+    margin: 0 10px;
 }
 
 .navbar li:hover {
@@ -278,7 +283,7 @@ section {
     height:25px;
     border-radius: 0.5rem;
     padding: 20px 20px;
-    margin: 90px 5px;
+    margin: auto 20px;
     z-index:1;
 }
 
@@ -362,8 +367,7 @@ section {
     position: fixed;
     text-align: center;
     top:18%;
-    right: 5rem;
-    font-size: 12px;
+    right: 8rem;
     color:#414141;
     font-weight: 400;
 }
@@ -378,6 +382,7 @@ section {
 }
 
 .side-bar li {
+    font-size: 12px;
     padding: 20px 0;
     width: 100px;
     border-bottom: 1px solid #efefef;
@@ -390,6 +395,11 @@ section {
     font-weight: 800;
 }
 
+/* main-image */
+.main-img {
+    border-radius: 20px;
+    width:200%;
+}
 
 /* footer */
 
@@ -397,6 +407,7 @@ footer {
     position:relative;
     padding: 0;
     margin: 0;
+    margin-top: 150px;
     width: 100%;
     height: 200px;
     background-color: #7735ff;
@@ -413,6 +424,3 @@ footer img {
 .not-footer {
     min-height: 786px;
 }
-
-
-

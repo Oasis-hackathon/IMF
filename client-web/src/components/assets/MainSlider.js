@@ -1,19 +1,22 @@
+import { addLeadingSlash } from "history/PathUtils";
 import React, { useState, useEffect, useRef } from "react";
 import styled from "styled-components";
-import ProductContainer from "./ProductContainer";
 
 // TOTAL_SLIDE는 전체 사진파일 개수 - 1
-const TOTAL_SLIDES = 2;
-const IMG_SIZE = 190;
-const SLIDE_MARGIN = 20;
-const Slide = ProductContainer;
+const TOTAL_SLIDES = 1;
+
+const Slide = styled.img`
+   position: relative;
+   width: 94%;
+   margin: 0 3%;
+   height: auto;
+`;
 
 const Container = styled.div`
    width: 100%;
    display: flex;
-   overflow: hidden;
-   margin: 0 auto;
-   margin-bottom: 3rem;
+   margin: 2rem auto;
+   margin-top: 4rem;
 `;
 
 const SlidesContainer = styled.div`
@@ -35,6 +38,8 @@ export default function Slider() {
    const nextSlide = () => {
       if (currentSlide < TOTAL_SLIDES) {
          setCurrentSlide(currentSlide + 1);
+      } else {
+         setCurrentSlide(0);
       }
    };
 
@@ -45,8 +50,8 @@ export default function Slider() {
    };
 
    useEffect(() => {
-      slideRef.current.style.transition = "all 0.5s cubic-bezier(0.075, 0.82, 0.165, 1)";
-      slideRef.current.style.transform = `translateX(-${currentSlide*(IMG_SIZE + SLIDE_MARGIN * 2)}px)`;
+      slideRef.current.style.transition = "all 0.5s ease-in-out";
+      slideRef.current.style.transform = `translateX(-${currentSlide*100}%)`;
    }, [currentSlide]);
 
    return (
@@ -54,12 +59,8 @@ export default function Slider() {
          <img className="slider-button" src="/images/buttons/left.png" alt="leftButton" onClick={prevSlide}/>
          <SlidesContainer>
             <Slides ref={slideRef}>
-               <Slide src={window.location.origin + "/images/detail1.png"} />
-               <Slide src={window.location.origin + "/images/detail2.png"} />
-               <Slide src={window.location.origin + "/images/detail3.png"} />
-               <Slide src={window.location.origin + "/images/detail1.png"} />
-               <Slide src={window.location.origin + "/images/detail2.png"} />
-               <Slide src={window.location.origin + "/images/detail3.png"} />
+               <Slide className="main-img no-drag" src={window.location.origin + "/images/main1.png"} />
+               <Slide className="main-img no-drag" src={window.location.origin + "/images/main2.png"} />
             </Slides>
          </SlidesContainer>
          <img className="slider-button" src="/images/buttons/right.png" alt="rightButton" onClick={nextSlide}/>
