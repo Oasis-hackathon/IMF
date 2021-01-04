@@ -1,5 +1,5 @@
 const pool = require('./pool');
-const {DB_SELECT_ERROR, DB_INSERT_ERROR} = require('./terms');
+const {DB_SELECT_ERROR, DB_INSERT_ERROR, DB_UPDATE_ERROR} = require('./terms');
 const SELECT_ALL_UNIV_QUERY = 'SELECT * from Univs';
 const FIND_ALL_FROM_TABLE_QUERY = (table, field, value) => {
     return `SELECT * FROM ${table} WHERE ${field}=${value}`;
