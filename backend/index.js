@@ -1,11 +1,9 @@
 const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
-const nodemailer = require('nodemailer');
-const ejs = require('ejs');
-const env = require('./.env.json');
 
 const userQuery = require('./js/userQuery');
+const sendMail = require('./js/sendMail');
 
 app.use(bodyParser.json());
 app.use(function(req, res, next) {
@@ -76,46 +74,13 @@ app.get('/univs', async (req, res) => {
 })
 
 app.post('/mail', async(req, res) => {
-    let authNum = Math.random().toString().substr(2,6);
-    let emailTemplate;
-    ejs.renderFile('./template/authMail.ejs', {authCode: authNum}, (err, data) => {
-        if (err) 
-            console.log(err);
-        emailTemplate = data;
-    })
-
-    let transporter = nodemailer.createTransport({
-        service: 'Gmail',
-        host: 'smtp.gmail.com',
-        port: 587,
-        secure: false,
-        auth: {
-            user: env.nodemailer.user,
-            pass: env.nodemailer.pass
-        },
-        secure: false,
-        tls: {
-            rejectUnauthorized: false
-        }
-    })
-
-    let mailOptions = {
-        from: env.nodemailer.user, // 구글계정
-        to: req.body.mail, // 메일을 보낼 주소
-        subject: "같이사자 대학 인증 메일입니다",
-        html: emailTemplate
+    try {
+        const authNum = await sendMail(req);
+        res.status('200').json({authCode: authNum}).end();
+    } catch(err) {
+        console.log(err);
+        res.status('400').json(err).end();
     }
-
-    transporter.sendMail(mailOptions, (err, info) => {
-        if (err)
-            console.log(err);
-        else {
-            console.log("SUCCESS SENDING MAIL");
-        }
-        transporter.close();
-    })
-
-    res.status('200').json({authCode: authNum}).end();
 })
 
 
