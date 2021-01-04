@@ -12,12 +12,10 @@ import SideBar from "./SideBar";
 
 const App = () => {
   return (
-    <div className="container-main">
+    <div className="container-app">
 
-      <div className="container-side-left">
-      </div>
-
-      <div className="container-app">
+      <div className="container not-footer">
+        <SideBar />
         <Router history={history}>
           <Header />
           <Navbar />
@@ -28,13 +26,10 @@ const App = () => {
               <Route path="/product_detail" component={ProductDetail} />
             </div>
           </Switch>
-          <Footer />
         </Router>
       </div>
 
-      <div className="container-side-right">
-        <SideBar />
-      </div>
+      <Footer />
 
     </div>
   );
