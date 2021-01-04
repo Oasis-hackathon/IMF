@@ -1,12 +1,17 @@
 .table-container {
     display: flex;
     justify-content: center;
+    padding-bottom: 100px;
 }
 
 .table {
     display: flex;
     flex-direction: column;
     justify-content: center;
+}
+
+.info-container {
+    margin: 20px 0;
 }
 
 .table-row {
@@ -36,8 +41,32 @@
     width: 30rem;
 }
 
-.horizontal-center .edit-button {
-    margin: 20px;
-    width: 70px;
+.small-title-container {
+    margin: 10px;
+}
+
+.small-title {
+    font-size: 1.5rem;
+}
+
+.purple-button.edit-button {
+    margin-top: auto;
+    margin-bottom: 0;
+    font-size: 0.7rem;
+    padding: 5px;
+    width: 50px;
     text-align: center;
+}
+
+.purple-button.edit-button.read-mode {
+    background-color: #f4f4f4;
+    color: #7635ff;
+}
+
+.select-field {
+    width: 300px;
+}
+
+.inner-form-field {
+    width: 300px;
 }
