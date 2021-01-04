@@ -15,6 +15,17 @@ a {
     color: #414141;
 }
 
+button {
+    padding: 0;
+    border: none;
+    outline: none;
+    font-size: 0.7rem;
+    font-weight: lighter;
+    color: #ffffff;
+    background: none;
+    cursor: pointer;
+}
+
 section {
     position: relative;
 }
