@@ -60,8 +60,18 @@ export const fetchProduct = (productId) => async dispatch => {
     dispatch({type: "FETCH_PRODUCTS", payload: data})
 }
 
-export const fetchProducts = (accessValue) => async dispatch => {
-    const {data} = await server.get(`/products?access_value="${accessValue}"`);
+export const fetchProducts = (accessValue, category=null) => async dispatch => {
+    let {data} = await server.get(`/products?access_value="${accessValue}"`);
+    if (category) {
+        const keys = Object.keys(data);
+        let filtered_data = [];
+        keys.forEach(k => {
+            if (data[k].category === category) {
+                filtered_data.push(data[k]);
+            }
+        });
+        data = filtered_data;
+    }
     dispatch({type: "FETCH_PRODUCTS", payload: data})
 }
 

@@ -2,7 +2,7 @@ import React from 'react';
 import ProductContainer from "../assets/ProductContainer";
 import { connect } from 'react-redux';
 import { fetchProducts } from "../../actions";
-import DropdownLink from '../DropdownLink';
+import history from '../../history';
 
 class Posts extends React.Component {
    getUnivRange() {
@@ -30,6 +30,14 @@ class Posts extends React.Component {
       )
    }
 
+   onSelectChange = () => {
+      const select = document.querySelector("#selectBox").value;
+      if (this.props.match.path.includes("my_univ"))
+         history.push(`/show_products/my_univ/${select}`)
+      else
+         history.push(`/show_products/other/${select}`)
+   }
+
    render() {
       return (
          <div className="posts">
@@ -37,13 +45,13 @@ class Posts extends React.Component {
             <div className="top">
                <div className="horizontal-space-between">
                   <h1>{this.getUnivRange()}학교의 상품들</h1>
-                  <div className="select-category">
-                     <select>
+                  <div>
+                     <select id="selectBox" className="select-category" onChange={this.onSelectChange}>
                         <option selected value="all">전체</option>
-                        <option value="제작">제작판매</option>
-                        <option value="공구">공동구매</option>
-                        <option value="졸작">졸업작품</option>
-                        <option value="중고">중고물품</option>
+                        <option value="made">제작판매</option>
+                        <option value="gongu">공동구매</option>
+                        <option value="graduation">졸업작품</option>
+                        <option value="jungo">중고물품</option>
                      </select>
                   </div>
                </div>

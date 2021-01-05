@@ -17,7 +17,14 @@ const Navbar = () => {
                     </li>
 
                     <li><Link to="/posting_page">나도팔래</Link></li>
-                    <li><Link to="/">졸작볼래</Link></li>
+                    <li className="dropdown-container ">
+                            <div className="dropdown-button">졸작볼래</div>
+                            
+                            <div className="dropdown-content">
+                                <DropdownLink link="/show_products/my_univ/graduation" title="우리학교" />
+                                <DropdownLink link="/show_products/other/graduation" title="다른학교" />
+                            </div>
+                    </li>
                     <li><Link to="/">주문제작 사이트</Link></li>
                 </ul>
             </div>

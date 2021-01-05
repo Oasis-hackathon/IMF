@@ -536,6 +536,6 @@ footer img {
 }
 
 .select-category {
-    margin-top: 10px;
-    padding-right: 1.4rem;
+    display: flex;
+    justify-content: center;
 }
