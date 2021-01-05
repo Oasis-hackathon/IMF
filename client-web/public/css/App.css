@@ -2,7 +2,7 @@
 @import url('./MyInfo.css');
 
 @font-face {
-    src: url("../IBMPlexSansKR-Text.ttf");
+    src: url("../IBMPlexSansKR-Light.ttf");
     font-family: "IbmPlex";
 }
 
@@ -116,6 +116,7 @@ section {
 }
 
 .link {
+    font-size: 0.8rem;
     color: #414141;
     cursor: pointer;
 }
