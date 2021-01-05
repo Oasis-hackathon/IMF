@@ -1,5 +1,7 @@
 @import url('./SimpleSlider.css');
 @import url('./MyInfo.css');
+@import url('./Posts.css');
+@import url('./PostingPage.css');
 
 @font-face {
     src: url("../IBMPlexSansKR-Text.ttf");
