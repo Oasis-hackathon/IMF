@@ -41,3 +41,11 @@ export const sendMail = (mail) => async dispatch => {
     const {data} = await server.post("/mail", {mail});
     dispatch({type: "GET_CODE", payload: data})
 }
+
+export const uploadProduct = (sellerId, formData, formValue) => async dispatch => {
+    const {data} = await server.post("/uploadImage", formData);
+    console.log(data.fileName)
+    const response = await server.post("/product", {sellerId, ...formValue, imagePath : data.fileName});
+    console.log(response.data);
+    history.push(`/show_product?access_value=${response.data.accessValue}`);
+}
