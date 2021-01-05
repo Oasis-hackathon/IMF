@@ -96,8 +96,6 @@ app.post('/mail', async (req, res) => {
 
 app.post('/product', async (req, res) => {
     try {
-        console.log(req.body);
-        console.log("formData:", req.body);
         const resultRow = await productQuery.insertProduct(req.body);
         console.log("in index.js result:", resultRow);
         res.status('200').json(resultRow).end();
@@ -109,8 +107,7 @@ app.post('/product', async (req, res) => {
 
 const upload = multer({storage: storage, limits: {fileSize: 100000000000}});
 
-app.post('/uploadImage', upload.single('image'), (req, res, next) => {
-    console.log(req.file)
+app.post('/uploadImage', upload.single('image'), (req, res) => {
     res.send({
         fileName: req.file.filename
     })

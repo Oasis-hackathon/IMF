@@ -12,6 +12,15 @@ const selectProductByProductId = async (id) => {
     }
 }
 
+const insertOptions = async (productId, body) => {
+    const keys = Object.keys(body);
+    keys.forEach(async key => {
+        if (key.includes("option")) {
+            await pool.execute('INSERT INTO ProductOptions (productId, value) VALUES (?, ?)', [productId, body[key]])
+        }
+    });
+}
+
 const insertProduct = async (body) => {
     try {
         console.log(body)
@@ -24,8 +33,11 @@ const insertProduct = async (body) => {
         if (result[0].affectedRows === 1) {
             console.log(result);
             console.log("INSERT_SUCCESS!");
-            console.log("result:", result[0].insertId);
-            const row  = await selectProductByProductId(result[0].insertId);
+            const productId = result[0].insertId;
+            console.log("productId:", productId); // productId
+            await insertOptions(productId, body);
+            console.log("OPTION_INSERT_SUCCESS!");
+            const row  = await selectProductByProductId(productId);
             console.log("row[0]:", row[0]);
             return (row[0]);
         }
