@@ -28,7 +28,6 @@ class Main extends React.Component {
             return null;
     }
 
-
     render() {
         return (
             <div>

@@ -1,11 +1,15 @@
+import { startAsyncValidation } from "redux-form"
+
 export default (state = {}, action) => {
     switch (action.type) {
         case 'FETCH_PRODUCT':
-            return {...action.payload[0]}
+            return { ...state, productInfo: action.payload }
         case 'FETCH_PRODUCTS':
-            return { ...action.payload }
+            return { productInfo: action.payload  }
         case 'FETCH_ALL_PRODUCTS':
-            return { ...action.payload }
+            return { productInfo: action.payload  }
+        case 'FETCH_OPTIONS':
+            return {...state, options: action.payload}
         default:
             return state;
     }

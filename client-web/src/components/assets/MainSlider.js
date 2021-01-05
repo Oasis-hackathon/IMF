@@ -1,6 +1,7 @@
 import { addLeadingSlash } from "history/PathUtils";
 import React, { useState, useEffect, useRef } from "react";
 import styled from "styled-components";
+import history from "../../history";
 
 // TOTAL_SLIDE는 전체 사진파일 개수 - 1
 const TOTAL_SLIDES = 1;
@@ -54,13 +55,21 @@ export default function Slider() {
       slideRef.current.style.transform = `translateX(-${currentSlide*100}%)`;
    }, [currentSlide]);
 
+   const onClick = () => {
+      history.push("/show_products/my_univ/graduation");
+   }
+
+   const onClick2 = () => {
+      history.push("/show_products/my_univ/graduation");
+   }
+
    return (
       <Container>
          <img className="slider-button" src="/images/buttons/left.png" alt="leftButton" onClick={prevSlide}/>
          <SlidesContainer>
             <Slides ref={slideRef}>
-               <Slide className="main-img no-drag" src={window.location.origin + "/images/main1.png"} />
-               <Slide className="main-img no-drag" src={window.location.origin + "/images/main2.png"} />
+               <Slide className="main-img no-drag" onClick={onClick} src={window.location.origin + "/images/main1.png"} />
+               <Slide className="main-img no-drag" onClick={onClick2} src={window.location.origin + "/images/main2.png"} />
             </Slides>
          </SlidesContainer>
          <img className="slider-button" src="/images/buttons/right.png" alt="rightButton" onClick={nextSlide}/>

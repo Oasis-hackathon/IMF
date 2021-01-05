@@ -41,7 +41,7 @@ class FilteredPosts extends React.Component {
    renderPosts = (products) => {
       const keys = Object.keys(products);
       return (
-         keys.map(k => {
+         keys.reverse().map(k => {
             return <ProductContainer data={products[k]} />
          })
       )
@@ -61,7 +61,6 @@ class FilteredPosts extends React.Component {
    }
 
    renderSelect() {
-      if (!this.props.match.path.includes("graduation")) {
          return (
             <div>
                <select id="selectBox" className="select-category" onChange={this.onSelectChange}>
@@ -74,8 +73,6 @@ class FilteredPosts extends React.Component {
                </select>
             </div>
          )
-      }
-      else return null;
    }
 
    render() {
@@ -101,7 +98,7 @@ class FilteredPosts extends React.Component {
 
 const mapStateToProps = state => {
    return {
-      products: state.product
+      products: state.product.productInfo
    }
 }
 

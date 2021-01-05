@@ -54,10 +54,8 @@ export const uploadProduct = (sellerId, formData, formValue) => async () => {
 }
 
 export const fetchProduct = (productId) => async dispatch => {
-    console.log(productId);
     const {data} = await server.get(`/product?id=${productId}`);
-    console.log(data);
-    dispatch({type: "FETCH_PRODUCTS", payload: data})
+    dispatch({type: "FETCH_PRODUCT", payload: data})
 }
 
 export const fetchProducts = (accessValue, category=null) => async dispatch => {
@@ -81,4 +79,9 @@ export const fetchAllProducts = (accessValue) => async dispatch => {
         dispatch({type: "FETCH_MYUNIV_PRO", payload: data})
     else
         dispatch({type: "FETCH_OTHER_PRO", payload: data})
+}
+
+export const fetchProductOptions = (productId) => async dispatch => {
+    const {data} = await server.get(`/productOptions?productId=${productId}`);
+    dispatch({type: "FETCH_OPTIONS", payload: data})
 }

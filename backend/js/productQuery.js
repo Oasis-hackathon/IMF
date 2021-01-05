@@ -1,6 +1,25 @@
 const pool = require('./pool');
 const {DB_SELECT_ERROR, DB_INSERT_ERROR, DB_UPDATE_ERROR} = require('./terms');const INSERT_PRODUCT_QUERY = 'INSERT INTO Products (title, price, description, category, stock, tradeType, accessValue, sellerId, imagePath) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)';
 
+const selectProductOptions = async (productId) => {
+    try {
+        const [row] = await pool.execute(`SELECT * from ProductOptions WHERE productId=${productId}`);
+        return row;
+    } catch (err) {
+        console.log(err)
+        throw new Error(DB_SELECT_ERROR);
+    }
+}
+
+const insertProductOptions = async (productId, body) => {
+    const keys = Object.keys(body);
+    keys.forEach(async key => {
+        if (key.includes("option")) {
+            await pool.execute('INSERT INTO ProductOptions (productId, value) VALUES (?, ?)', [productId, body[key]])
+        }
+    });
+}
+
 
 const selectProductByProductId = async (id) => {
     try {
@@ -34,15 +53,6 @@ const selectAllProducts = async () => {
     }
 }
 
-const insertOptions = async (productId, body) => {
-    const keys = Object.keys(body);
-    keys.forEach(async key => {
-        if (key.includes("option")) {
-            await pool.execute('INSERT INTO ProductOptions (productId, value) VALUES (?, ?)', [productId, body[key]])
-        }
-    });
-}
-
 const insertProduct = async (body) => {
     try {
         console.log(body)
@@ -57,7 +67,7 @@ const insertProduct = async (body) => {
             console.log("INSERT_SUCCESS!");
             const productId = result[0].insertId;
             console.log("productId:", productId); // productId
-            await insertOptions(productId, body);
+            await insertProductOptions(productId, body);
             console.log("OPTION_INSERT_SUCCESS!");
             const row  = await selectProductByProductId(productId);
             console.log("row[0]:", row[0]);
@@ -74,5 +84,6 @@ module.exports = {
     insertProduct,
     selectProductByProductId,
     selectProductsByAccessValue,
-    selectAllProducts
+    selectAllProducts,
+    selectProductOptions
 }

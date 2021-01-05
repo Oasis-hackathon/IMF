@@ -138,6 +138,17 @@ app.post('/product', async (req, res) => {
     }
 })
 
+app.get('/productOptions', async (req, res) => {
+    try {
+        const resultRows = await productQuery.selectProductOptions(req.query.productId);
+        console.log("resultRows:", resultRows);
+        res.status('200').json(resultRows).end();
+    }catch (err) {
+        console.log(err);
+        res.status('400').json(err).end();
+    }
+})
+
 const upload = multer({storage: storage, limits: {fileSize: 100000000000}});
 
 app.post('/uploadImage', upload.single('image'), (req, res) => {

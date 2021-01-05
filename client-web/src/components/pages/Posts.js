@@ -22,12 +22,14 @@ class Posts extends React.Component {
    }
 
    renderPosts = (products) => {
-      const keys = Object.keys(products);
-      return (
-         keys.map(k => {
-            return <ProductContainer data={products[k]} />
-         })
-      )
+      if (products && products[0]) {
+         const keys = Object.keys(products);
+         return (
+            keys.reverse().map(k => {
+               return <ProductContainer data={products[k]} />
+            })
+         )
+      } else return null;
    }
 
    onSelectChange = () => {
@@ -69,7 +71,7 @@ class Posts extends React.Component {
 
 const mapStateToProps = state => {
    return {
-      products: state.product
+      products: state.product.productInfo
    }
 }
 

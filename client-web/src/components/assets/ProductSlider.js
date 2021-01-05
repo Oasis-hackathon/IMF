@@ -53,7 +53,7 @@ const Slider = ({products}) => {
    
       const keys = Object.keys(products);
       return(
-         keys.map(k => { return <Slide data={products[k]} /> })
+         keys.reverse().map(k => { return <Slide data={products[k]} /> })
       )
    }
 

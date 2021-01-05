@@ -3,18 +3,41 @@ import { connect } from 'react-redux';
 import ProductButton from '../ProductButton';
 import ProductInfo from '../ProductInfo';
 import SimpleSlider from '../assets/SimpleSlider';
-import { fetchProduct } from '../../actions';
+import { fetchProduct, fetchProductOptions } from '../../actions';
 
 class ProductDetail extends React.Component {
 
     componentDidMount() {
         this.props.fetchProduct(this.props.match.params.id);
+        this.props.fetchProductOptions(this.props.match.params.id);
+    }
+
+    renderOption(options) {
+        return (
+            Object.keys(options).map(k => {
+                return (
+                    <option value={options[k].id}>{options[k].value}</option>
+                )
+            })
+        )
+    }
+
+    renderOptions() {
+        const options = this.props.options;
+        console.log(options);
+        if (options) {
+            return (
+                <select className="select-option">
+                    {this.renderOption(options)}
+                </select>
+            )
+        } else return null;
     }
 
     renderContent() {
-        if (this.props.product) {
-            const product = this.props.product[0]
-            console.log(product)
+        let product = this.props.product;
+        if (product) {
+            product=product[0];
             return (
                 <div className="container product-detail">
                     <div>
@@ -22,6 +45,7 @@ class ProductDetail extends React.Component {
                             <SimpleSlider thumbnail={product.imagePath}/> 
                             <div className="container">
                                 <ProductInfo info={product} />
+                                {this.renderOptions()}
                                 <ProductButton count={23}/>
                             </div>
                         </div>
@@ -46,8 +70,9 @@ class ProductDetail extends React.Component {
 
 const mapStateToProps = (state) => {
     return ({
-        product: state.product
+        product: state.product.productInfo,
+        options: state.product.options
     })
 }
 
-export default connect(mapStateToProps, {fetchProduct})(ProductDetail);
+export default connect(mapStateToProps, {fetchProduct, fetchProductOptions})(ProductDetail);
