@@ -27,7 +27,7 @@ const ProductButton = ({count}) => {
         <div className="horizontal-space-between product-button-container">
             <div className="vertical-center">
                 <span>{wish_count}</span>
-                <img className="small-button" onClick={onWishClick} src={getHeartSrc()} alt="wish" />
+                <img className="small-button heart" onClick={onWishClick} src={getHeartSrc()} alt="wish" />
             </div>
             <img className="small-button" src={window.location.origin + "/images/buttons/share.png"} alt="share" />
             <div className="purple-button">나도살래 | 17명</div>

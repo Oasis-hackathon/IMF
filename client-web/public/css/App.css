@@ -120,12 +120,39 @@ section {
 .vertical-center span {
     font-size: 0.7rem;
     color: #414141;
+    display: block;
+    position: absolute;
+    transform: translateX(60%) translateY(-120%);
 }
 
 .page-title {
     padding: 3rem 0 1rem 7rem;
     font-size: 2rem;
 }
+
+select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+select::-ms-expand {
+    display: none;
+}
+
+select {
+
+    width: 100px; /* 원하는 너비설정 */
+    padding: 5px 5px; /* 여백으로 높이 설정 */
+    font-family: inherit;  /* 폰트 상속 */
+    background: url('이미지 경로') no-repeat 95% 50%; /* 네이티브 화살표를 커스텀 화살표로 대체 */
+    border: 1px solid #999;
+    border-radius: 0.5rem; /* iOS 둥근모서리 제거 */
+    -webkit-appearance: none; /* 네이티브 외형 감추기 */
+    -moz-appearance: none;
+    appearance: none;
+}
+
 
 /* general css end */
 
@@ -309,13 +336,22 @@ section {
 }
 
 .price {
-    font-size: 2.3rem;
-    margin-bottom: 1rem;
+    font-size: 1.8rem;
 }
 
 .title {
     font-size: 2.4rem;
-    margin-bottom: 2.5rem;
+}
+
+.select-option {
+    width: 278px;
+    margin: 10px 0;
+}
+
+.small-button.heart {
+    padding-left: 0;
+    position: relative;
+    bottom: 0;
 }
 
 .short-description {
@@ -323,7 +359,6 @@ section {
 }
 
 .product-button-container {
-    margin-top: 3rem;
     width:70%;
 }
 
@@ -536,6 +571,6 @@ footer img {
 }
 
 .select-category {
-    margin-top: 10px;
-    padding-right: 1.4rem;
+    display: flex;
+    justify-content: center;
 }

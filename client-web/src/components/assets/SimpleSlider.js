@@ -1,7 +1,6 @@
 import React, {useState} from 'react';
 import SmallImage from './SmallImage';
 
-// 나중에 db에서 fetch해서 props로 가지고 있게 될 주소들. lodash의 mapKeys함수를 이용해 img의 id를 key로 만들어서 처리할 것
 const images = {
     0: {id: 0, src: "/images/detail1.png"},
     1: {id: 1, src: "/images/detail2.png"},
@@ -9,8 +8,14 @@ const images = {
     3: {id: 3, src: "/images/detail4.png"}
 }
 
-const SimpleSlider = () => {
+const SimpleSlider = ({thumbnail}) => {
     const [current, setCurrent] = useState(0);
+    const images = {
+        0: {id: 0, src: "/uploadImages/" + thumbnail},
+        1: {id: 1, src: "/images/detail2.png"},
+        2: {id: 2, src: "/images/detail3.png"},
+        3: {id: 3, src: "/images/detail4.png"}
+    }
 
     const changeFocus = (currentId) => {
         setCurrent(currentId);
