@@ -10,13 +10,12 @@ class Main extends React.Component {
         this.props.fetchAllProducts("every");
     }
 
-    getMyUnivs() {
+    getMyUniv() {
         if (this.props.myuniv) {
             console.log("myuniv:", this.props.myuniv);
             return this.props.myuniv;
         }
-        else 
-            return null;
+        else return null;
     }
 
     getOther() {
@@ -24,16 +23,25 @@ class Main extends React.Component {
             console.log("other:", this.props.other);
             return this.props.other;
         }
-        else 
-            return null;
+        else return null;
+    }
+
+    renderMyUniv() {
+        if (this.props.isSignedIn)
+            return (
+                <React.Fragment>
+                    <div className="page-title"> 우리 대학교에서 인기 짱! </div>
+                    <ProductSlider products={this.getMyUniv()}/>
+                </React.Fragment>
+            )
+        else return null;
     }
 
     render() {
         return (
             <div>
                 <MainSlider />
-                <div className="page-title"> 우리 대학교에서 인기 짱! </div>
-                <ProductSlider products={this.getMyUnivs()}/>
+                {this.renderMyUniv()}
                 <div className="page-title"> 다른 학교 에서 인기 짱! </div>
                 <ProductSlider products={this.getOther()}/>
             </div>
@@ -43,8 +51,9 @@ class Main extends React.Component {
 
 const mapStateToProps = state => {
     return {
-       myuniv: state.myuniv,
-       other: state.other
+        isSignedIn: state.user.isSignedIn,
+        myuniv: state.myuniv,
+        other: state.other
     }
  }
  
