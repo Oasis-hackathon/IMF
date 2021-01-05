@@ -1,6 +1,5 @@
 @import url('./SimpleSlider.css');
 @import url('./MyInfo.css');
-@import url('./Posts.css');
 @import url('./PostingPage.css');
 
 @font-face {
@@ -17,6 +16,44 @@ body {
 a {
     text-decoration: none;
     color: #414141;
+}
+
+select {
+
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+
+    font-family: "IBM Plex Sans KR", sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+  
+    color: #444;
+    background-color: none;
+  
+    padding: 0.6em 1.4em 0.5em 0.8em;
+    margin: 0;
+  
+    border: 1px solid #aaa;
+    border-radius: 0.5em;
+    box-shadow: none;
+
+    transition: all 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+    
+}
+select:hover {
+    border-color: #414141;
+}
+  
+select:focus {
+    border-color: #414141;
+    color: #222;
+    outline: none;
+}
+  
+select:disabled {
+    opacity: 0.5;
 }
 
 button {
@@ -131,16 +168,26 @@ section {
     background-color: #7735ff;
     border-radius: 0.5rem;
     color: #ffffff;
-    padding: 15px 20px;
+    padding: 15px 25px;
     font-weight: lighter;
     margin: 10px;
     cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.purple-button:hover {
+    transform: scale(1.05);
 }
 
 .small-button {
     width: 30px;
     padding: 0 10px;
     cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.small-button:hover {
+    transform: scale(1.15);
 }
 
 #search-top-container {
@@ -200,6 +247,10 @@ section {
     background-color: #ffffff;
 }
 
+.navbar .dropdown-button {
+    color:white;
+}
+
 .navbar ul {
     display: flex;
     padding: 0;
@@ -219,30 +270,52 @@ section {
 
 /* ProductDetail page */
 
-.detail-container {
-    max-width: 70rem;
-    padding: 4rem 4rem;
-    font-size: 0.9rem;
+.product-detail {
+    max-width: 80%;
+    margin: 5rem 10%;
+    margin-top: 4rem;
+    font-size: 1rem;
     color: #414141;
+}
+
+.product-detail .container{
+    margin: 0 2.5rem;
+    justify-content: end;
+}
+
+.product-detail h1 {
+    margin: 3rem 5rem;
+}
+
+.detail-product-info {
+    padding-bottom: 4rem;
+    border-bottom: 0.5px solid #e4e4e4;
+    justify-content: end;
+}
+
+.categorize {
+    margin: 2rem 0;
 }
 
 .categorize span {
     color: #7735ff;
+    font-size: 1.2rem
 }
 
 .categorize .product-category {
-    font-size: 1.1rem;
-}
-
-.title {
-    font-size: 2rem;
-    padding: 5px 0;
+    font-size: 1.6rem;
+    margin: 0;
+    padding: 0;
 }
 
 .price {
-    font-size: 1.6rem;
-    padding: 5px 0;
-    text-align: end;
+    font-size: 2.3rem;
+    margin-bottom: 1rem;
+}
+
+.title {
+    font-size: 2.4rem;
+    margin-bottom: 2.5rem;
 }
 
 .short-description {
@@ -250,12 +323,15 @@ section {
 }
 
 .product-button-container {
-    margin: 15px 0;
-    
+    margin-top: 3rem;
+    width:70%;
 }
 
 .long-description {
-    line-height: 150%;
+    margin: 2rem;
+    font-size: 1.3rem;
+    line-height: 200%;
+    word-spacing: 0.3em;
 }
 
 /* dropdown */
@@ -437,4 +513,29 @@ footer img {
 
 .not-footer {
     min-height: 786px;
+}
+
+
+/* Posts */
+.posts {
+    width:100%;
+}
+ 
+.posts .top {
+    width: 76%;
+    margin: 3% 12%;
+    margin-bottom: 0;
+}
+
+.post-container {
+    width: 84%;
+    margin: 2% 8%;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+}
+
+.select-category {
+    margin-top: 10px;
+    padding-right: 1.4rem;
 }
