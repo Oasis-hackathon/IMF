@@ -94,6 +94,39 @@ app.post('/mail', async (req, res) => {
     }
 })
 
+app.get('/product', async (req, res) => {
+    try {
+        const resultRow = await productQuery.selectProductByProductId(req.query.id);
+        console.log("resultRow");
+        res.status('200').json(resultRow).end();
+    } catch (err) {
+        console.log(err);
+        res.status('400').json(err).end();
+    }
+})
+
+app.get('/products', async (req, res) => {
+    try {
+        const resultRows = await productQuery.selectProductsByAccessValue(req.query.access_value);
+        console.log("resultRows:", resultRows);
+        res.status('200').json(resultRows).end();
+    } catch (err) {
+        console.log(err);
+        res.status('400').json(err).end();
+    }
+})
+
+app.get('/all_products', async (req, res) => {
+    try {
+        const resultRows = await productQuery.selectAllProducts();
+        console.log("resultRows:", resultRows);
+        res.status('200').json(resultRows).end();
+    } catch (err) {
+        console.log(err);
+        res.status('400').json(err).end();
+    }
+})
+
 app.post('/product', async (req, res) => {
     try {
         const resultRow = await productQuery.insertProduct(req.body);

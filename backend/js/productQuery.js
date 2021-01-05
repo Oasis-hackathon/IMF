@@ -12,6 +12,28 @@ const selectProductByProductId = async (id) => {
     }
 }
 
+const selectProductsByAccessValue = async (accessValue) => {
+    try {
+        console.log(`SELECT * from Products WHERE accessValue=${accessValue}`);
+        const [row] = await pool.execute(`SELECT * from Products WHERE accessValue=${accessValue}`);
+        return (row);
+    } catch (err) {
+        console.log(err)
+        throw new Error(DB_SELECT_ERROR);
+    }
+}
+
+const selectAllProducts = async () => {
+    try {
+        console.log(`SELECT * from Products`);
+        const [row] = await pool.execute(`SELECT * from Products`);
+        return (row);
+    } catch (err) {
+        console.log(err)
+        throw new Error(DB_SELECT_ERROR);
+    }
+}
+
 const insertOptions = async (productId, body) => {
     const keys = Object.keys(body);
     keys.forEach(async key => {
@@ -24,7 +46,7 @@ const insertOptions = async (productId, body) => {
 const insertProduct = async (body) => {
     try {
         console.log(body)
-        const result = await pool.execute(INSERT_PRODUCT_QUERY, [body.title, body.price, body.description, body.category, body.stock, body.tradeType, body.accessValue, body.sellerId, " "]);
+        const result = await pool.execute(INSERT_PRODUCT_QUERY, [body.title, body.price, body.description, body.category, body.stock, body.tradeType, body.accessValue, body.sellerId, body.imagePath]);
         console.log(result[0][0]);
         if (result[0].affectedRows === 0) {
             console.log("INSERT_FAILED(NOT_AFFECTED)");
@@ -49,5 +71,8 @@ const insertProduct = async (body) => {
 }
 
 module.exports = {
-    insertProduct
+    insertProduct,
+    selectProductByProductId,
+    selectProductsByAccessValue,
+    selectAllProducts
 }

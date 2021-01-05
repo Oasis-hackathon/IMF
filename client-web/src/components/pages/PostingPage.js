@@ -51,14 +51,13 @@ class PostingPage extends React.Component {
    }
 
 
-   onFormSubmit = formValue => {
+   onFormSubmit = async formValue => {
       let formData =  new FormData();
       formData.append("name", formValue.image.name);
       formData.append("image", formValue.image);
       console.log(formData);
       console.log(formValue);
       this.props.uploadProduct(this.props.id, formData, formValue);
-      // 이 뒤에는 제출 엑션 (formValue, formData) 같이 제출
    }
 
    onImageClick() {

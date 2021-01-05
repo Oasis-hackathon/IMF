@@ -30,10 +30,10 @@ const App = () => {
               <div>
                 <Route path="/" exact component={Main} />
                 <Route path="/myInfo" exact component={MyInfo} />
-                <Route path="/product_detail" exact component={ProductDetail} />
+                <Route path="/product_detail/:id" exact component={ProductDetail} />
                 <Route path="/posting_page" exact component={PostingPage} />
-                <Route path="/other_univs" exact component={Posts} />
-                <Route path="/my_univ" exact component={Posts} />
+                <Route path="/show_products/my_univ" exact component={Posts} />
+                <Route path="/show_products/other" exact component={Posts} />
               </div>
             </Switch>
           </RenderOnTop>

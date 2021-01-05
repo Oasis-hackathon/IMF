@@ -4,7 +4,6 @@ import server from '../apis/server';
 export const signIn = (userId, userImagePath, userName) => async (dispatch) => {
     const {data} = await server.post('/login/google', {userId, userImagePath, userName});
 	dispatch({ type: "SIGN_IN", payload: data});
-    history.goBack();
 };
 
 export const signOut = () => {
@@ -42,10 +41,34 @@ export const sendMail = (mail) => async dispatch => {
     dispatch({type: "GET_CODE", payload: data})
 }
 
-export const uploadProduct = (sellerId, formData, formValue) => async dispatch => {
+export const uploadProduct = (sellerId, formData, formValue) => async () => {
     const {data} = await server.post("/uploadImage", formData);
     console.log(data.fileName)
+    console.log(data);
     const response = await server.post("/product", {sellerId, ...formValue, imagePath : data.fileName});
     console.log(response.data);
-    history.push(`/show_product?access_value=${response.data.accessValue}`);
+    if (response.data.accessValue == "us")
+        history.push(`/show_products/my_univ`);
+    else
+    history.push(`/show_products/other`);
+}
+
+export const fetchProduct = (productId) => async dispatch => {
+    console.log(productId);
+    const {data} = await server.get(`/product?id=${productId}`);
+    console.log(data);
+    dispatch({type: "FETCH_PRODUCTS", payload: data})
+}
+
+export const fetchProducts = (accessValue) => async dispatch => {
+    const {data} = await server.get(`/products?access_value="${accessValue}"`);
+    dispatch({type: "FETCH_PRODUCTS", payload: data})
+}
+
+export const fetchAllProducts = (accessValue) => async dispatch => {
+    const {data} = await server.get(`/products?access_value="${accessValue}"`);
+    if (accessValue == "us")
+        dispatch({type: "FETCH_MYUNIV_PRO", payload: data})
+    else
+        dispatch({type: "FETCH_OTHER_PRO", payload: data})
 }

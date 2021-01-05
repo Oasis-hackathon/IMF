@@ -3,7 +3,6 @@ import styled from "styled-components";
 import ProductContainer from "./ProductContainer";
 
 // TOTAL_SLIDE는 전체 사진파일 개수 - 1
-const TOTAL_SLIDES = 2;
 const IMG_SIZE = 190;
 const SLIDE_MARGIN = 20;
 const Slide = ProductContainer;
@@ -27,8 +26,9 @@ const Slides = styled.div`
    display: flex;
 `;
 
-export default function Slider() {
+const Slider = ({products}) => {
 
+   const TOTAL_SLIDES = Object.keys(products).length - 1;
    const [currentSlide, setCurrentSlide] = useState(0);
    const slideRef = useRef(null);
 
@@ -49,20 +49,25 @@ export default function Slider() {
       slideRef.current.style.transform = `translateX(-${currentSlide*(IMG_SIZE + SLIDE_MARGIN * 2)}px)`;
    }, [currentSlide]);
 
+   const renderSlide = () => {
+   
+      const keys = Object.keys(products);
+      return(
+         keys.map(k => { return <Slide data={products[k]} /> })
+      )
+   }
+
    return (
       <Container>
          <img className="slider-button" src="/images/buttons/left.png" alt="leftButton" onClick={prevSlide}/>
          <SlidesContainer>
             <Slides ref={slideRef}>
-               <Slide src={window.location.origin + "/images/detail1.png"} />
-               <Slide src={window.location.origin + "/images/detail2.png"} />
-               <Slide src={window.location.origin + "/images/detail3.png"} />
-               <Slide src={window.location.origin + "/images/detail1.png"} />
-               <Slide src={window.location.origin + "/images/detail2.png"} />
-               <Slide src={window.location.origin + "/images/detail3.png"} />
+               {renderSlide()}
             </Slides>
          </SlidesContainer>
          <img className="slider-button" src="/images/buttons/right.png" alt="rightButton" onClick={nextSlide}/>
       </Container>
    );
 }
+
+export default Slider;
