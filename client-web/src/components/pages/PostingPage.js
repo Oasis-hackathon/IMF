@@ -1,45 +1,92 @@
 import React from 'react';
 import { Field, reduxForm } from 'redux-form';
 import { connect } from 'react-redux';
+import { uploadProduct } from '../../actions';
 import Title from '../PostingComponents/Title';
 import Category from '../PostingComponents/Category';
 import AccessValue from '../PostingComponents/AccessValue';
 import TradeType from '../PostingComponents/TradeType';
 import Options from '../PostingComponents/Options';
 import Stock from '../PostingComponents/Stock';
+import Price from '../PostingComponents/Price';
 
 class PostingPage extends React.Component {
-   // state = {
-   //    value: '상세 설명을 입력하세요.'
-   // };
 
-   // handleChange(event) {
-   //    this.setState({ value: event.target.value });
-   // }
+   state = {'name': null}
 
-   // handleSubmit(event) {
-   //    alert('An essay was submitted: ' + this.state.value);
-   //    event.preventDefault();
-   // }
+   renderInput = ({ input, type }) => {
+      return (
+        <div>
+          <input
+            id="file-button"
+            name={input.name}
+            type={type}
+            accept={"image/*"}
+            onChange={event => this.handleChange(event, input)}
+            multiple
+          />
+        </div>
+      );
+    };
 
-   uploadPicture() {
-      alert("이미지를 업로드 하세요");
+   handleChange = (e, input) => {
+      console.log('handle Change');
+      e.preventDefault();
+      let imageFile = e.target.files[0];
+      if (imageFile) {
+         const localImageUrl = URL.createObjectURL(imageFile);
+         const imageObject = new window.Image();
+
+         imageObject.onload = () => {
+            imageFile.width = imageObject.naturalWidth;
+            imageFile.height = imageObject.naturalHeight;
+            input.onChange(imageFile);
+            URL.revokeObjectURL(imageFile);
+         };
+         imageObject.src = localImageUrl;
+         const img_preview = document.querySelector(".add-picture-button");
+         img_preview.src = localImageUrl;
+      }
+      this.setState(e.target.files[0]);
+   }
+
+
+   onFormSubmit = formValue => {
+      let formData =  new FormData();
+      formData.append("name", formValue.image.name);
+      formData.append("image", formValue.image);
+      console.log(formData);
+      console.log(formValue);
+      this.props.uploadProduct(this.props.id, formData, formValue);
+      // 이 뒤에는 제출 엑션 (formValue, formData) 같이 제출
+   }
+
+   onImageClick() {
+      const button = document.querySelector("#file-button");
+      console.log(button);
+      const click_event = document.createEvent("MouseEvents");
+      click_event.initEvent('click', false, true);
+      button.dispatchEvent(click_event);
    }
 
    render() {
       return (
          <div>
-         <form className="posting-page" onSubmit={this.handleSubmit}>
+         <form className="posting-page" onSubmit={this.props.handleSubmit(this.onFormSubmit)}>
             <div className="posting-top">
                <div className="posting-top-left">
                   <h1>간판 사진 등록</h1>
-
-                  <img class="add-picture-button link"
-                     src={window.location.origin + "/images/buttons/plus.png"}
-                     alt="추가"
-                     onClick={() => this.uploadPicture()}
-                  />
-
+                     <img class="add-picture-button link"
+                        src={window.location.origin + "/images/pluspadding.png"}
+                        alt="추가"
+                        onClick={this.onImageClick}
+                     />
+                  <div className="filebox">
+                  <label for="file-button">
+                     업로드
+                  </label>
+                  <Field component="input" type="file" name="image" component={this.renderInput} />
+                  </div>
                </div>
 
                <div className="posting-top-right">
@@ -47,6 +94,7 @@ class PostingPage extends React.Component {
                   <Category />
                   <AccessValue />
                   <TradeType />
+                  <Price />
                   <Stock />
                   <Options />
                </div>
@@ -74,6 +122,4 @@ const Wrapped = reduxForm({
    form: 'productForm'
 })(PostingPage);
 
-export default connect(mapStateToProps)(Wrapped);
-
-// export default reduxForm({ form: "productForm" })(PostingPage);
+export default connect(mapStateToProps, {uploadProduct})(Wrapped);

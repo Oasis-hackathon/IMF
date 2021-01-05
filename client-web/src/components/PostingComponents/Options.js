@@ -20,9 +20,9 @@ const Options = () => {
     }
 
     return (
-        <div className="horizontal option-container">
-            <label className="post-label">제품옵션</label>
+        <div className="option-container">
             <div className="input-container">
+                <label className="post-label">제품옵션</label>
                 <div className="field-container">
                 {renderFieldList()}
                 </div>

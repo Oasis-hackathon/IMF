@@ -105,6 +105,7 @@ const selectUnivs = async () => {
     }
 }
 
+
 module.exports = {
     selectUserById,
     selectUserByUserId,
