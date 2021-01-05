@@ -4,10 +4,14 @@ import history from "../history";
 
 import Header from "./Header";
 import Navbar from "./Navbar";
+
 import Main from "./pages/Main";
 import MyInfo from "./pages/MyInfo";
+
 import ProductDetail from './pages/ProductDetail';
 import PostingPage from './pages/PostingPage';
+import Posts from './pages/Posts';
+
 import Footer from "./Footer";
 import SideBar from "./SideBar";
 import RenderOnTop from "./RenderOnTop";
@@ -26,8 +30,10 @@ const App = () => {
               <div>
                 <Route path="/" exact component={Main} />
                 <Route path="/myInfo" exact component={MyInfo} />
-                <Route path="/product_detail" component={ProductDetail} />
-                <Route path="/posting_page" component={PostingPage} />
+                <Route path="/product_detail" exact component={ProductDetail} />
+                <Route path="/posting_page" exact component={PostingPage} />
+                <Route path="/other_univs" exact component={Posts} />
+                <Route path="/my_univ" exact component={Posts} />
               </div>
             </Switch>
           </RenderOnTop>
