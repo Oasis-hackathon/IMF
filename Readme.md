@@ -12,17 +12,17 @@
 
 ## 사용기술스택
 
-![Readme%20md%20254c3446752141c08037334966f84ae9/Untitled.png](Readme%20md%20254c3446752141c08037334966f84ae9/Untitled.png)
+![0](https://user-images.githubusercontent.com/48192106/104104436-8493c100-52eb-11eb-93eb-90b1f92ce775.png)
 
 ## 프로젝트 소개
 
-![Readme%20md%20254c3446752141c08037334966f84ae9/Untitled%201.png](Readme%20md%20254c3446752141c08037334966f84ae9/Untitled%201.png)
+![1](https://user-images.githubusercontent.com/48192106/104104389-21a22a00-52eb-11eb-83f7-d2cadbc800aa.png)
 
-![Readme%20md%20254c3446752141c08037334966f84ae9/Untitled%202.png](Readme%20md%20254c3446752141c08037334966f84ae9/Untitled%202.png)
+![2](https://user-images.githubusercontent.com/48192106/104104398-3f6f8f00-52eb-11eb-877f-ab142f7f3949.png)
 
-![Readme%20md%20254c3446752141c08037334966f84ae9/Untitled%203.png](Readme%20md%20254c3446752141c08037334966f84ae9/Untitled%203.png)
+![3](https://user-images.githubusercontent.com/48192106/104104399-426a7f80-52eb-11eb-9a93-4a7266596b37.png)
 
-![Readme%20md%20254c3446752141c08037334966f84ae9/Untitled%204.png](Readme%20md%20254c3446752141c08037334966f84ae9/Untitled%204.png)
+![4](https://user-images.githubusercontent.com/48192106/104104405-49918d80-52eb-11eb-9d50-190e35ae98fa.png)
 
 ## 시연영상
 
@@ -31,7 +31,7 @@
 - myInfo에서 개인정보 수정가능
 - 대학교 메일 인증기능
 
-[Readme%20md%20254c3446752141c08037334966f84ae9/__.mp4](Readme%20md%20254c3446752141c08037334966f84ae9/__.mp4)
+<iframe width="560" height="315" src="https://www.youtube.com/embed/wCSVbL8HmIw" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 - 나도 살래 : 올라온 판매글들을 볼 수 있는 카테고리
     - 우리학교와 다른학교로 나뉘어짐.
@@ -39,4 +39,4 @@
 - 나도 팔래 : 직접 판매 게시글 올릴 수 있는 페이지
 - 졸작 볼래 : 졸업시즌 활성화되는 카테고리. 학교 학생들이 자신의 졸업작품으로 온라인 전시회를 열고 판매할 수 있는 페이지
 
-[Readme%20md%20254c3446752141c08037334966f84ae9/__%201.mp4](Readme%20md%20254c3446752141c08037334966f84ae9/__%201.mp4)
+<iframe width="560" height="315" src="https://www.youtube.com/embed/_2UJzgtpUYM" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
