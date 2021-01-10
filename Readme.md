@@ -31,7 +31,7 @@
 - myInfo에서 개인정보 수정가능
 - 대학교 메일 인증기능
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/wCSVbL8HmIw" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+[![Video Label](https://www.youtube.com/watch?v=wCSVbL8HmIw&feature=youtu.be)](https://www.youtube.com/watch?v=wCSVbL8HmIw&feature=youtu.be)
 
 - 나도 살래 : 올라온 판매글들을 볼 수 있는 카테고리
     - 우리학교와 다른학교로 나뉘어짐.
@@ -39,4 +39,4 @@
 - 나도 팔래 : 직접 판매 게시글 올릴 수 있는 페이지
 - 졸작 볼래 : 졸업시즌 활성화되는 카테고리. 학교 학생들이 자신의 졸업작품으로 온라인 전시회를 열고 판매할 수 있는 페이지
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/_2UJzgtpUYM" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+[![Video Label](https://www.youtube.com/watch?v=_2UJzgtpUYM&feature=youtu.be)](https://www.youtube.com/watch?v=_2UJzgtpUYM&feature=youtu.be)
